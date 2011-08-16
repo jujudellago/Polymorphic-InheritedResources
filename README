@@ -1,0 +1,39 @@
+demo app to describe my problem with InheritedResources using polymorphic associations
+
+- bundle install
+- rake db:migrate
+this will also add dummy values
+
+- bundle exec unicorn_rails -p 3000
+
+
+go to 
+ http://localhost:3000/employees/1/pictures
+
+you will see: Parent = nil
+
+open app/controllers/pictures_controller.rb 
+
+replace 
+  belongs_to :employee, :product, :polymorphic => true
+
+with 
+  belongs_to :employee 
+
+go back again to 
+  http://localhost:3000/employees/1/pictures
+
+You will see
+Parent = #<Employee id: 1, name: "employe1", created_at: "2011-08-16 08:07:42", updated_at: "2011-08-16 08:07:42">
+
+I believe that shows the association and logic works fine with a regular "belongs_to" but not with ":polymorphic => true"
+
+
+I don't know if I missed a configuration option or if there is a bug, absolutely everything else is working perfeclty with InheritedResources in my application, of course I have tried to digg the gem's code, ran the tests, read the documentation, posted my question on the google group, stackoverflow and github....
+
+Thanks in advance for any help, my last resort would be to record a holographic message, upload into a droid and send him through space to look for Obi-Wan Kenobi but I'm not sure how to do that either.
+
+cheers
+
+julien
+
