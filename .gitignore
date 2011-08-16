@@ -1,0 +1,9 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+public/galleries/*
+.DS_Store
+public/cache/**/*
+db/schema.rb
+config/database.yml
