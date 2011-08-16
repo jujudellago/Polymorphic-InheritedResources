@@ -1,9 +1,7 @@
 demo app to describe my problem with InheritedResources using polymorphic associations
 
 - bundle install
-- rake db:migrate
-this will also add dummy values
-
+- rake db:migrate (this will also add dummy values)
 - bundle exec unicorn_rails -p 3000
 
 
